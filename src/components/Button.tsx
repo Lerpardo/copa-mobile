@@ -1,18 +1,16 @@
-import React from 'react'
-import {Button as ButtonNativeBase,Text} from 'native-base'
+import React from "react";
+import { Button as ButtonNativeBase, Text, IButtonProps } from "native-base";
 
-interface Props {
-    title: string
+interface Props extends IButtonProps {
+  title: string;
 }
 
-function Button({title} : Props) {
+function Button({ title }: Props) {
   return (
     <ButtonNativeBase>
-        <Text>
-            {title}
-        </Text>
+      <Text>{title}</Text>
     </ButtonNativeBase>
-  )
+  );
 }
 
-export default Button
+export default Button;
