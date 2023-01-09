@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 import * as Google from "expo-auth-session/providers/google";
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
@@ -12,6 +12,7 @@ interface UserProps {
 
 export interface AuthContextDataProps {
   user: UserProps;
+  isUserLoading: boolean;
   signIn: () => Promise<void>;
 }
 
@@ -21,6 +22,9 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextDataProps);
 
 export function AuthContextProvider({ children }: AuthProviderProps) {
+    const [user,setUser] = useState<UserProps>({} as UserProps)
+  const [isUserLoading, setIsUserLoading] = useState(false);
+
   const [request, response, promptAsync] = Google.useAuthRequest({
     clientId:
       "459959545530-3ctc3ahodpqj74u2fe6mbbinnm89si08.apps.googleusercontent.com",
@@ -29,17 +33,23 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
   });
 
   async function signIn() {
-    console.log("Entrou");
+    try {
+      setIsUserLoading(true);
+      await promptAsync();
+    } catch (e) {
+      console.log(e.message);
+      throw e;
+    } finally {
+      setIsUserLoading(false);
+    }
   }
-  
+
   return (
     <AuthContext.Provider
       value={{
         signIn,
-        user: {
-          name: "Beterraba",
-          avatarUrl: "https://github.com/Lerpardo.png",
-        },
+        isUserLoading,
+        user,
       }}
     >
       {children}
