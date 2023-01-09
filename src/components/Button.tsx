@@ -14,9 +14,16 @@ function Button({ title, type = "PRIMARY", ...rest }: Props) {
       fontSize="md"
       textTransform="uppercase"
       bg={type === "SECONDARY" ? "red.500" : "yellow.500"}
+      _pressed={{
+        bg:type === 'SECONDARY' ? 'red.700' : 'yellow.600'
+      }}
       {...rest}
     >
-      <Text>{title}</Text>
+      <Text
+      fontSize='sm'
+      fontFamily='heading'
+      color={type === 'SECONDARY' ? 'white' : 'black'}
+      >{title}</Text>
     </ButtonNativeBase>
   );
 }
