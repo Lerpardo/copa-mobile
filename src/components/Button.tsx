@@ -5,11 +5,11 @@ interface Props {
     title: string
 }
 
-function Button() {
+function Button({title} : Props) {
   return (
     <ButtonNativeBase>
         <Text>
-            Login com Google
+            {title}
         </Text>
     </ButtonNativeBase>
   )
