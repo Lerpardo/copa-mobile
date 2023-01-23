@@ -31,30 +31,12 @@ Mobile
 To  run the server
 
 ```bash
-  cd copa-server
   npm run dev
 ```
 Port `:4444`
 
 Open [localhost](http://localhost:4444) to acess server.
 
-### Web
-
-```bash
-  cd copa-web
-  npm start
-```
-Open [localhost](http://localhost:3000) to view.
-
-### Mobile
-Download App or Emulator
-
-[Android](https://play.google.com/store/apps/details?id=host.exp.exponent&pli=1) or [IOS](https://apps.apple.com/br/app/expo-go/id982107779)
-
-```bash
-  cd copa-mobile
-  npx expo start
-```
 
 
 
@@ -62,7 +44,6 @@ Download App or Emulator
 
 ## Technologies used in its development 🧑‍💻
 
-- [React Native]()
 - [Prisma]()
 - [Expo]()
 - [Typescipt]()
@@ -82,29 +63,24 @@ In this project, I used the Web API Spotfy to access data.
 
 ## Run Locally
 
-Clone the project
+### Web
 
 ```bash
-  git clone git@github.com:Lerpardo/talker-manager.git
+  cd copa-web
+  npm start
 ```
+Open [localhost](http://localhost:3000) to view.
 
-Go to the project directory
+### Mobile
+Download App or Emulator
+
+[Android](https://play.google.com/store/apps/details?id=host.exp.exponent&pli=1) or [IOS](https://apps.apple.com/br/app/expo-go/id982107779)
 
 ```bash
-  cd my-project
+  cd copa-mobile
+  npx expo start
 ```
 
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run dev
-```
 
 
 ## Feedback
