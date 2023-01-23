@@ -31,6 +31,7 @@ Mobile
 To  run the server
 
 ```bash
+  cd copa-server
   npm run dev
 ```
 Port `:4444`
@@ -40,6 +41,7 @@ Open [localhost](http://localhost:4444) to acess server.
 ### Web
 
 ```bash
+  cd copa-web
   npm start
 ```
 Open [localhost](http://localhost:3000) to view.
@@ -50,6 +52,7 @@ Download App or Emulator
 [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&pli=1) or [IOS](https://apps.apple.com/br/app/expo-go/id982107779)
 
 ```bash
+  cd copa-mobile
   npx expo start
 ```
 
